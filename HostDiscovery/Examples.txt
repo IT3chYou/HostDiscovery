@@ -1,0 +1,25 @@
+python main.py --type ARP -i 192.168.1.1 -s /24 --timeout 5 --verbose
+
+python main.py --type ARP -i 192.168.1.1 -s /24 --count 3 --OS
+
+python main.py --type ARP -i 192.168.1.1 -s /24 -pr 100 -pt SYN
+
+2. Dış Ağ ve Host Kontrolü (ICMP)
+python main.py --type ICMP4Rec -i 8.8.8.8 --timeout 3 --verbose
+
+python main.py --type ICMP1Rec -i 1.1.1.1 --OS
+
+3. Gelişmiş Port Taramaları
+python main.py --type ICMP1Rec -i 192.168.1.20 -pr 1000 -pt TCP
+
+python main.py --type ICMP4Rec -i 192.168.1.20 -pr 500 -pt UDP
+
+python main.py --type ICMP1Rec -i 192.168.1.20 -pr 100 -pt ACK
+
+4. Gizlilik ve Yanıltma (Fake IP & Proxy)
+python main.py --type ICMP1Rec -i 192.168.1.50 -fi 10 --ip_class C
+
+python main.py --type ICMP4Rec -i 8.8.8.8 --proxy random
+
+5. Tam Kapsamlı Tarama (Full Scan)
+python main.py --type ARP -i 192.168.1.1 -s /24 --OS -pr 50 -pt SYN -fi 5 --ip_class C --timeout 5
