@@ -31,11 +31,31 @@ class NetHunter:
         if args.type == 'ARP':
             self.arp.HostDiscoveryWithArp(args.ip_address, args.subnet_mask, args.count, args.timeout, args.verbose, args.port_range,args.port_type, args.fake_ip, args.ip_class, args.proxy, args.os)
 
-        elif args.type == 'ICMP4Rec':
-            self.icmp_one.HostDiscoveryWithIcmpFourPackReceive(args.ip_address, args.timeout, args.port_range, args.verbose,args.port_type, args.fake_ip, args.ip_class, args.proxy, args.os)
-        elif args.type == 'ICMP1Rec':
-            self.icmp_four.HosDiscoveryOnePackReceive(args.ip_address, args.timeout, args.port_range, args.verbose, args.port_type,args.fake_ip, args.ip_class, args.proxy, args.os)
-        else:
+		elif args.type == 'ICMP4Rec':
+		    self.icmp_four.HostDiscoveryWithIcmpFourPackReceive(
+		        args.ip_address,
+		        args.timeout,
+		        args.port_range,
+		        args.verbose,
+		        args.port_type,
+		        args.fake_ip,
+		        args.ip_class,
+		        args.proxy,
+		        args.os)
+
+		elif args.type == 'ICMP1Rec':
+		    self.icmp_one.HosDiscoveryOnePackReceive(
+		        args.ip_address,
+		        args.timeout,
+		        args.port_range,
+		        args.verbose,
+		        args.port_type,
+		        args.fake_ip,
+		        args.ip_class,
+		        args.proxy,
+		        args.os)
+		
+		else:
             print("Please choose a valid option.")
 
 
