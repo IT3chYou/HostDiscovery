@@ -41,7 +41,8 @@ class NetHunter:
 		        args.fake_ip,
 		        args.ip_class,
 		        args.proxy,
-		        args.os)
+		        args.os
+		    )
 
 		elif args.type == 'ICMP1Rec':
 		    self.icmp_one.HosDiscoveryOnePackReceive(
@@ -53,7 +54,8 @@ class NetHunter:
 		        args.fake_ip,
 		        args.ip_class,
 		        args.proxy,
-		        args.os)
+		        args.os
+		    )
 		
 		else:
             print("Please choose a valid option.")
