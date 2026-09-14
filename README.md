@@ -1,71 +1,63 @@
 # 🐍 HostDiscovery
 
-Welcome to **HostDiscovery Program**! 🎯
+A lightweight network discovery and scanning tool developed with Python and Scapy.
 
-This script provides information about devices located within the network. ✨
+HostDiscovery is designed as a personal networking project to explore:
 
-This tool is not as advanced as tools like `nmap`.  
-Port detection and service detection have been kept simple and superficial.
+- ARP-based host discovery
+- ICMP-based host discovery
+- TCP/UDP port scanning
+- SYN, ACK and FIN scanning techniques
+- MAC address vendor lookup
+- Basic operating system fingerprinting
+- Network packet manipulation with Scapy
 
----
+> ⚠️ HostDiscovery is a personal learning project and is not intended
+> to replace mature tools such as Nmap.
 
-- 🐍 Python scripts (`.py` files)  
-- 📄 Short description and usage documentation  
-- ⚙️ Optional requirements or config files  
+## 🚀 Features
 
----
+### 🔎 Host Discovery
+- ARP discovery
+- ICMP-based discovery
+- IP and MAC address detection
 
-## 🚀 How to Use
+### 🔌 Port Scanning
+Supported scan types:
 
-Most scripts can be executed directly via the terminal.  
-Use `-h` or `--help` to see usage instructions.
+- TCP
+- UDP
+- SYN
+- ACK
+- FIN
 
-```bash
-python Hostdiscovery.py -h
+### 🖥️ Basic OS Detection
 
-python Hostdiscovery.py --type ARP -i 192.168.1.0 -s /24 -c 10 -t 5 -v
+Attempts to identify the target operating system using:
 
-python Hostdiscovery.py --type ICMP1Rec -i 192.168.1.1
+- IP TTL
+- TCP window size
 
-python Hostdiscovery.py --type ICMP4Rec -i 192.168.1.1 -pt TCP -pr 100 -fi 100 -ic
-````
+The result is heuristic and should not be considered definitive.
 
-usage: Host_Discovery_Version2.py [-h] --type {ICMP4Rec,ARP,ICMP1Rec}
-                                  [-s SUBNET_MASK]
-                                  [-i IP_ADDRESS]
-                                  [-c COUNT]
-                                  [-t TIMEOUT]
-                                  [-v]
-                                  [-pr PORT_RANGE]
-                                  [-pt {TCP,UDP,SYN,ACK,FIN}]
-                                  [-fi FAKE_IP]
-                                  [-ic IP_CLASS]
-                                  [-p PROXY]
-                                  [-o]
+### 🌐 MAC Vendor Lookup
 
-
-| Argument                                                                    | Description                                     |
-| --------------------------------------------------------------------------- | ----------------------------------------------- |
-| `-h, --help`                                                                | Show this help message and exit                 |
-| `--type {ICMP4Rec, ARP, ICMP1Rec}`                                          | Choose scan type                                |
-| `-s SUBNET_MASK, --subnet_mask SUBNET_MASK`                                 | Specify subnet mask (e.g. `/24`)                |
-| `-i IP_ADDRESS, --ip_address IP_ADDRESS`                                    | Target IP address                               |
-| `-c COUNT, --count COUNT`                                                   | Number of times to repeat scan                  |
-| `-t TIMEOUT, --timeout TIMEOUT`                                             | Response timeout in seconds                     |
-| `-v, --verbose`                                                             | Verbose output to show detailed process         |
-| `-pr PORT_RANGE, --port_scan PORT_RANGE`                                    | Specify port range for scanning (e.g. `20-100`) |
-| `-pt {TCP, UDP, SYN, ACK, FIN}, --port_scan_type {TCP, UDP, SYN, ACK, FIN}` | Specify port scan type                          |
-| `-fi FAKE_IP, --fake-ip FAKE_IP`                                            | Use a fake IP address or IP range for scanning  |
-| `-ic IP_CLASS, --ip_class IP_CLASS`                                         | Specify IP class                                |
-| `-p PROXY, --proxy PROXY`                                                   | Choose specific proxy server or random proxy    |
-| `-o, --OS`                                                                  | Attempt to detect Operating System              |
+MAC addresses can be queried to determine the associated vendor.
 
 
-
-This tool is a lightweight network scanner for quick device discovery.
-
-For in-depth scanning and analysis, consider tools like nmap.
-
-Port scanning types (TCP, UDP, SYN, ACK, FIN) offer different scanning methods for varied use cases.
-
-Use --verbose to get detailed output useful for troubleshooting or understanding scan progress.
+HostDiscovery
+│
+├── Host Discovery
+│   ├── ARP
+│   └── ICMP
+│
+├── Port Scanning
+│   ├── TCP
+│   ├── UDP
+│   ├── SYN
+│   ├── ACK
+│   └── FIN
+│
+├── OS Detection
+├── MAC Vendor Lookup
+└── Packet Manipulation
