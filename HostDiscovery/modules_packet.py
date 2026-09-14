@@ -13,7 +13,24 @@ from concurrent.futures import ThreadPoolExecutor
 
 class Modules:
     def __init__(self)->None:
-        self.name = "Hello World"
+        self.protocols = [
+            {"port": 20, "service": "FTP-Data"},
+            {"port": 21, "service": "FTP"},
+            {"port": 22, "service": "SSH"},
+            {"port": 23, "service": "Telnet"},
+            {"port": 25, "service": "SMTP"},
+            {"port": 53, "service": "DNS"},
+            {"port": 80, "service": "HTTP"},
+            {"port": 110, "service": "POP3"},
+            {"port": 143, "service": "IMAP"},
+            {"port": 443, "service": "HTTPS"},
+            {"port": 445, "service": "SMB"},
+            {"port": 3306, "service": "MySQL"},
+            {"port": 3389, "service": "RDP"},
+            {"port": 5432, "service": "PostgreSQL"},
+            {"port": 5900, "service": "VNC"},
+            {"port": 8080, "service": "HTTP-Proxy"},
+        ]
 
     # FONKSİYONLAR BURADA, INIT DIŞINDA OLMALI
     def get_internal_ip(self):
