@@ -13,7 +13,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 class Modules:
     def __init__(self)->None:
-        pass
+        self.name = "Hello World"
 
     # FONKSİYONLAR BURADA, INIT DIŞINDA OLMALI
     def get_internal_ip(self):
